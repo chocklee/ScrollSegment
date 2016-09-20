@@ -1,0 +1,32 @@
+//
+//  PrefixHeader.pch
+//  Demo
+//
+//  Created by 李长浩 on 16/5/24.
+//  Copyright © 2016年 北京精智科技. All rights reserved.
+//
+
+#ifndef PrefixHeader_pch
+#define PrefixHeader_pch
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+#define MainScreenBounds [UIScreen mainScreen].bounds
+#define MainScreenSize MainScreenBounds.size
+
+// 屏幕的宽、高
+#define kScreenWidth [UIScreen mainScreen].bounds.size.width
+#define kScreenHeight [UIScreen mainScreen].bounds.size.height
+
+// 以iPhone6为标准，计算不同机型的宽、高
+#define RealWidth(value) ((value) / 375.0f * [UIScreen mainScreen].bounds.size.width)
+#define RealHeight(value) ((value) / 667.0f * [UIScreen mainScreen].bounds.size.height)
+
+// weakSelf
+#define WeakSelf(weakSelf)  __weak typeof(self) weakSelf = self;
+
+// NSUserDefaults
+#define UserDefaults(userDefaults) NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+
+#endif /* PrefixHeader_pch */
